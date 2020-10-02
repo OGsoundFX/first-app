@@ -18,10 +18,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // or create a route and print stuff
 app.get('/', (req, res) => {
-    // print this directly to the home page of your app
-    res.send("Second message, OMG it's working!");
+    // will print this directly to the home page of your app
+    // res.send("Second message, OMG it's working!");
+    // If you leave blank it will redirect to the index.html located at '/'
 });
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
+app.listen(process.env.PORT || 4000, () => {
+    console.log('Server started on port 4000');
 })
